@@ -198,6 +198,7 @@
             overflow: hidden;
             transition: transform 0.2s, border-color 0.2s;
             cursor: pointer;
+            position: relative;
         }
 
         .portfolio-item:hover { transform: translateY(-4px); border-color: #7fad8e; }
@@ -235,79 +236,90 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.92);
+            background: rgba(0, 0, 0, 0.95);
             z-index: 1000;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 40px;
-            cursor: pointer;
         }
 
         .lightbox.active {
             display: flex;
         }
 
-        .lightbox-content {
-            position: relative;
-            max-width: 90vw;
-            max-height: 90vh;
+        .lightbox-top-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
             display: flex;
-            flex-direction: column;
             align-items: center;
-            cursor: default;
+            justify-content: space-between;
+            padding: 16px 20px;
+            z-index: 10;
         }
 
-        .lightbox-content img {
-            max-width: 100%;
-            max-height: 80vh;
-            object-fit: contain;
-            border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-        }
-
-        .lightbox-info {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .lightbox-info h3 {
-            font-size: 20px;
-            font-weight: 700;
+        .lightbox-title {
+            font-size: 15px;
+            font-weight: 600;
             color: #ffffff;
-            margin-bottom: 6px;
-        }
-
-        .lightbox-info p {
-            font-size: 14px;
-            color: rgba(255,255,255,0.5);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 70%;
         }
 
         .lightbox-close {
-            position: absolute;
-            top: -40px;
-            right: 0;
-            width: 36px;
-            height: 36px;
+            width: 40px;
+            height: 40px;
             background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.2);
+            border: none;
             border-radius: 50%;
             color: #ffffff;
-            font-size: 20px;
+            font-size: 22px;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             transition: background 0.2s;
+            -webkit-tap-highlight-color: transparent;
         }
 
-        .lightbox-close:hover {
-            background: rgba(255,255,255,0.2);
+        .lightbox-close:hover { background: rgba(255,255,255,0.2); }
+
+        .lightbox-image-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 70px 20px 80px;
+            overflow: hidden;
         }
 
-        .lightbox-nav {
+        .lightbox-image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .lightbox-bottom-bar {
             position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 20px;
+            gap: 16px;
+            z-index: 10;
+        }
+
+        .lightbox-nav-btn {
             width: 44px;
             height: 44px;
             background: rgba(255,255,255,0.1);
@@ -320,37 +332,42 @@
             justify-content: center;
             cursor: pointer;
             transition: background 0.2s;
+            -webkit-tap-highlight-color: transparent;
         }
 
-        .lightbox-nav:hover { background: rgba(255,255,255,0.2); }
-        .lightbox-prev { left: -60px; }
-        .lightbox-next { right: -60px; }
+        .lightbox-nav-btn:hover { background: rgba(255,255,255,0.2); }
 
-        /* Click hint on hover */
-        .portfolio-item::after {
-            content: "Click to view full size";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
-            color: rgba(255,255,255,0.8);
-            font-size: 12px;
-            font-weight: 600;
+        .lightbox-counter {
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+            font-weight: 500;
+            min-width: 50px;
             text-align: center;
-            padding: 20px 10px 12px;
-            opacity: 0;
-            transition: opacity 0.2s;
-            pointer-events: none;
         }
 
-        .portfolio-item {
-            position: relative;
+        /* Desktop side arrows */
+        .lightbox-side-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 50%;
+            color: #ffffff;
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.2s;
+            z-index: 10;
         }
 
-        .portfolio-item:hover::after {
-            opacity: 1;
-        }
+        .lightbox-side-nav:hover { background: rgba(255,255,255,0.15); }
+        .lightbox-side-prev { left: 20px; }
+        .lightbox-side-next { right: 20px; }
 
         /* ===== ORDER FORM PAGE ===== */
         .form-container { max-width: 600px; margin: 0 auto; padding: 40px 20px; }
@@ -380,33 +397,50 @@
 
         .note { text-align: center; margin-top: 16px; font-size: 13px; color: rgba(255,255,255,0.3); }
 
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             .pricing-grid { grid-template-columns: 1fr; }
-            .portfolio-grid { grid-template-columns: 1fr; }
+            .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
             .addons-grid { grid-template-columns: repeat(2, 1fr); }
             .header h1, .portfolio-header h1 { font-size: 32px; }
             .form-row { grid-template-columns: 1fr; }
             .nav-links { gap: 4px; }
             .nav-link { padding: 8px 12px; font-size: 13px; }
-            .lightbox-prev { left: 10px; }
-            .lightbox-next { right: 10px; }
-            .lightbox-content { max-width: 95vw; }
+
+            /* Lightbox mobile */
+            .lightbox-side-nav { display: none; }
+            .lightbox-image-container { padding: 60px 10px 70px; }
+            .lightbox-title { font-size: 13px; }
+        }
+
+        @media (max-width: 480px) {
+            .portfolio-grid { grid-template-columns: 1fr; }
+            .nav-cta { display: none; }
         }
     </style>
 </head>
 <body>
 
     <!-- ===== LIGHTBOX OVERLAY ===== -->
-    <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
-        <div class="lightbox-content" onclick="event.stopPropagation()">
-            <span class="lightbox-close" onclick="closeLightbox(event)">✕</span>
-            <span class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">‹</span>
-            <span class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">›</span>
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-top-bar">
+            <span class="lightbox-title" id="lightboxTitle"></span>
+            <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+        </div>
+
+        <div class="lightbox-image-container" id="lightboxImageContainer">
             <img id="lightboxImg" src="" alt="">
-            <div class="lightbox-info">
-                <h3 id="lightboxTitle"></h3>
-                <p id="lightboxDesc"></p>
-            </div>
+        </div>
+
+        <!-- Side arrows for desktop -->
+        <div class="lightbox-side-nav lightbox-side-prev" onclick="navigateLightbox(-1)">‹</div>
+        <div class="lightbox-side-nav lightbox-side-next" onclick="navigateLightbox(1)">›</div>
+
+        <!-- Bottom bar with nav for mobile + counter -->
+        <div class="lightbox-bottom-bar">
+            <button class="lightbox-nav-btn" onclick="navigateLightbox(-1)">‹</button>
+            <span class="lightbox-counter" id="lightboxCounter">1 / 5</span>
+            <button class="lightbox-nav-btn" onclick="navigateLightbox(1)">›</button>
         </div>
     </div>
 
@@ -606,11 +640,15 @@
         const SUPABASE_URL = 'https://moxgbzpocxkkkxagcouq.supabase.co';
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1veGdienBvY3hra2t4YWdjb3VxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAzNTc2NDgsImV4cCI6MjA5NTkzMzY0OH0.fUgpEHhKwu7rqwi0v68r4pJOViWNWjNZR4_eC0iS79A';
 
-        // Portfolio data cache
+        // Portfolio data
         let portfolioItems = [];
         let currentFilter = 'all';
         let currentLightboxIndex = 0;
         let filteredItems = [];
+
+        // Touch/swipe tracking
+        let touchStartX = 0;
+        let touchEndX = 0;
 
         // Fetch portfolio items from Supabase
         async function fetchPortfolio() {
@@ -682,12 +720,12 @@
             currentLightboxIndex = index;
             document.getElementById('lightboxImg').src = item.image_url;
             document.getElementById('lightboxTitle').textContent = item.title;
-            document.getElementById('lightboxDesc').textContent = item.description || '';
+            document.getElementById('lightboxCounter').textContent = `${index + 1} / ${filteredItems.length}`;
             document.getElementById('lightbox').classList.add('active');
             document.body.style.overflow = 'hidden';
         }
 
-        function closeLightbox(event) {
+        function closeLightbox() {
             document.getElementById('lightbox').classList.remove('active');
             document.body.style.overflow = '';
         }
@@ -699,7 +737,7 @@
             openLightbox(newIndex);
         }
 
-        // Keyboard navigation for lightbox
+        // Keyboard navigation
         document.addEventListener('keydown', function(e) {
             const lightbox = document.getElementById('lightbox');
             if (!lightbox.classList.contains('active')) return;
@@ -707,6 +745,40 @@
             if (e.key === 'Escape') closeLightbox();
             if (e.key === 'ArrowLeft') navigateLightbox(-1);
             if (e.key === 'ArrowRight') navigateLightbox(1);
+        });
+
+        // Swipe support for mobile
+        const lightboxContainer = document.getElementById('lightboxImageContainer');
+
+        lightboxContainer.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        lightboxContainer.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Swiped left - next
+                    navigateLightbox(1);
+                } else {
+                    // Swiped right - previous
+                    navigateLightbox(-1);
+                }
+            }
+        }
+
+        // Close lightbox when tapping the background (not the image)
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this || e.target === document.getElementById('lightboxImageContainer')) {
+                closeLightbox();
+            }
         });
 
         // Filter portfolio

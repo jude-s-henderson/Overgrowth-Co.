@@ -1,222 +1,6 @@
+
 <!DOCTYPE html>
-<html lang="en"><head><style id="qw-theme">:root {
-  --color-bg: #121218;
-  --color-text: #e4e4ed;
-  --color-navbar-bg: #1a1a24;
-  --color-bg-chat-view: #121218;
-  --color-bg-secondary: #1a1a24;
-  --color-bg-tertiary: #1e1e2a;
-  --color-bg-hover: #2a2a38;
-  --color-surface: #1e1e2a;
-  --color-surface-hover: #2a2a38;
-  --color-surface-active: #353546;
-  --color-border: rgba(255, 255, 255, .12);
-  --color-border-light: rgba(255, 255, 255, .06);
-  --color-border-strong: #3a3a4e;
-  --color-primary: #8575ff;
-  --color-primary-dark: #4200db;
-  --color-primary-light: #8575ff;
-  --color-primary-bg: color-mix(in srgb, #8575ff 15%, transparent);
-  --color-primary-hover-border: #4200db;
-  --color-nav-icon-active: #8575ff;
-  --color-nav-hover-border: #8575ff;
-  --color-primary-alpha-3: color-mix(in srgb, #8575ff 3%, transparent);
-  --color-primary-alpha-5: color-mix(in srgb, #8575ff 5%, transparent);
-  --color-primary-alpha-8: color-mix(in srgb, #8575ff 8%, transparent);
-  --color-primary-alpha-12: color-mix(in srgb, #8575ff 12%, transparent);
-  --color-primary-alpha-15: color-mix(in srgb, #8575ff 15%, transparent);
-  --color-primary-alpha-20: color-mix(in srgb, #8575ff 20%, transparent);
-  --color-primary-alpha-25: color-mix(in srgb, #8575ff 25%, transparent);
-  --color-primary-alpha-30: color-mix(in srgb, #8575ff 30%, transparent);
-  --color-primary-alpha-40: color-mix(in srgb, #8575ff 40%, transparent);
-  --color-primary-alpha-50: color-mix(in srgb, #8575ff 50%, transparent);
-  --color-primary-alpha-60: color-mix(in srgb, #8575ff 60%, transparent);
-  --color-primary-subtle: color-mix(in srgb, #8575ff 25%, transparent);
-  --color-primary-border: color-mix(in srgb, #8575ff 50%, transparent);
-  --color-focus-ring: color-mix(in srgb, #8575ff 60%, transparent);
-  --color-sidebar-hover: color-mix(in srgb, #8575ff 15%, transparent);
-  --color-accent: #8575ff;
-  --color-accent-foreground: #8575ff;
-  --color-accent-dark: #4200db;
-  --color-accent-light: color-mix(in srgb, #8575ff 15%, transparent);
-  --color-accent-inverse: #ffffff;
-  --color-link: #8575ff;
-  --color-primary-gradient-end: color-mix(in srgb, #8575ff 35%, transparent);
-  --color-primary-bg-solid: #1a1530;
-  --color-user-bubble: #333843;
-  --color-text-secondary: #a0a0b4;
-  --color-text-tertiary: #8a8a9a;
-  --color-text-muted: #6e6e82;
-  --color-text-on-primary: #ffffff;
-  --color-success: #4ade80;
-  --color-success-dark: #00802f;
-  --color-success-light: #d9ffd6;
-  --color-success-hover: #005c26;
-  --color-success-bg: rgba(0, 128, 47, .15);
-  --color-success-border: rgba(0, 128, 47, .35);
-  --color-success-foreground: #4ade80;
-  --color-success-dark-foreground: #00802f;
-  --color-error: #ff6b6b;
-  --color-error-dark: #db0000;
-  --color-error-light: #ffe0e0;
-  --color-error-hover: rgba(219, 0, 0, .15);
-  --color-error-bg: rgba(219, 0, 0, .15);
-  --color-error-border: rgba(219, 0, 0, .35);
-  --color-error-active-border: #db0000;
-  --color-error-foreground: #ff6b6b;
-  --color-error-dark-foreground: #db0000;
-  --color-error-inverse: #ffffff;
-  --color-warning: #fbbf24;
-  --color-warning-dark: #f2b100;
-  --color-warning-light: #fffbbd;
-  --color-warning-hover: #db9200;
-  --color-warning-bg: rgba(242, 177, 0, .15);
-  --color-warning-border: rgba(242, 177, 0, .35);
-  --color-warning-foreground: #fbbf24;
-  --color-warning-dark-foreground: #573a00;
-  --color-warning-inverse: #573a00;
-  --color-surface-warning: #fffbbd;
-  --color-text-warning: #573a00;
-  --color-info: #60a5fa;
-  --color-info-dark: #006ce0;
-  --color-info-light: #d1f1ff;
-  --color-info-hover: #003b8f;
-  --color-info-bg: rgba(0, 108, 224, .15);
-  --color-info-border: rgba(0, 108, 224, .35);
-  --color-info-foreground: #60a5fa;
-  --color-info-dark-foreground: #002a66;
-  --color-info-inverse: #ffffff;
-  --color-overlay: rgba(0, 0, 0, .7);
-  --color-shadow: rgba(0, 0, 0, .3);
-  --color-hover: rgba(255, 255, 255, .05);
-  --color-tooltip-bg: rgba(30, 30, 42, .95);
-  --color-tooltip-text: #e4e4ed;
-  --color-voice-purple: #8575ff;
-  --color-voice-purple-dark: #4200db;
-  --color-voice-purple-light: #8575ff;
-  --color-voice-red: #ff6b6b;
-  --color-voice-red-dark: #db0000;
-  --color-voice-amber: #fbbf24;
-  --color-voice-purple-glow: rgba(133, 117, 255, .4);
-  --color-voice-red-glow: rgba(219, 0, 0, .4);
-  --font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-mono: "SF Mono", "Monaco", "Menlo", "Consolas", monospace;
-  --text-2xs: .5625rem;
-  --text-xs: .625rem;
-  --text-sm: .6875rem;
-  --text-base: .75rem;
-  --text-md: .8125rem;
-  --text-lg: .875rem;
-  --text-xl: 1rem;
-  --text-2xl: 1.125rem;
-  --text-3xl: 1.25rem;
-  --text-4xl: 1.5rem;
-  --text-5xl: 2rem;
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-card: 12px;
-  --radius-lg: 16px;
-  --radius-pill: 8px;
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .2);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, .3);
-  --color-success-bg-solid: rgba(0, 128, 47, .18);
-  --color-error-bg-solid: rgba(219, 0, 0, .18);
-  --color-error-border-solid: rgba(219, 0, 0, .35);
-  --color-warning-bg-solid: rgba(242, 177, 0, .18);
-  --color-warning-text: #fbbf24;
-  --color-info-bg-solid: rgba(59, 130, 246, .18);
-  --color-info-bg-solid-alt: rgba(99, 102, 241, .18);
-  --color-info-text: #60a5fa;
-  --color-info-text-alt: #818cf8;
-  --color-emerald: #34d399;
-  --color-teal: #5eead4;
-  --color-code-bg: #1e1e2a;
-  --color-code-header-bg: #252535;
-  --color-code-text: #e4e4ed;
-  --color-code-border: #2e2e3e;
-  --color-code-muted: #6e6e82;
-  --color-inline-code-bg: #1e1e2a;
-  --color-inline-code-text: #e4e4ed;
-  --color-inline-code-border: #2e2e3e;
-  --color-scrollbar-thumb: #3a3a4e;
-  --color-scrollbar-track: transparent;
-  --color-graph-node-text: #e4e4ed;
-  --color-graph-node-text-dim: #6e6e82;
-  --color-graph-edge-default: #6e6e82;
-  --color-graph-edge-cross: #F39C12;
-  --color-graph-edge-text: #a0a0b4;
-  --color-graph-edge-stroke: #1a1a24;
-  --color-graph-highlight-bg: #FF6B6B;
-  --color-graph-highlight-border: #E74C3C;
-  --color-graph-search-bg: #FFD700;
-  --color-graph-search-border: #FFA500;
-  --color-graph-focus-border: #FF4444;
-  --color-graph-external-border: #6e6e82;
-  --color-graph-cat-file: #5DADE2;
-  --color-graph-cat-folder: #AAB7B8;
-  --color-graph-cat-file-aggregate: #5499C7;
-  --color-graph-cat-class: #BB8FCE;
-  --color-graph-cat-function: #58D68D;
-  --color-graph-cat-method: #48C9B0;
-  --color-graph-cat-variable: #F5B041;
-  --color-graph-cat-import: #EB984E;
-  --color-graph-cat-module: #7E8CE0;
-  --color-graph-cat-concept: #EC7063;
-  --color-graph-cat-person: #FF8A8A;
-  --color-graph-cat-org: #76D7C4;
-  --color-graph-cat-organization: #76D7C4;
-  --color-graph-cat-product: #B8B0FE;
-  --color-graph-cat-metric: #FEA0C0;
-  --color-graph-cat-location: #7E9BB5;
-  --color-graph-cat-date: #F092C0;
-  --color-graph-cat-code: #5DADE2;
-  --color-graph-cat-doc: #AAB7B8;
-  --color-graph-cat-url: #45D6B5;
-  --color-graph-cat-email: #8E7CF7;
-  --color-graph-cat-unknown: #D5DBDB;
-  --color-graph-rel-contains: #D5DBDB;
-  --color-graph-rel-extends: #BB8FCE;
-  --color-graph-rel-implements: #5DADE2;
-  --color-graph-rel-imports: #EB984E;
-  --color-graph-rel-uses: #58D68D;
-  --color-graph-rel-calls: #52BE80;
-  --color-graph-rel-references: #F5B041;
-  --color-graph-rel-related-to: #AAB7B8;
-  --color-graph-rel-works-on: #EC7063;
-  --color-graph-rel-owns: #48C9B0;
-  --color-graph-rel-depends-on: #EB984E;
-  --color-graph-rel-parent-of: #D5DBDB;
-  --qs-content: #1a1a24;
-  --qs-main: #1e1e2a;
-  --qs-primary-foreground: #e4e4ed;
-  --qs-secondary-foreground: #a0a0b4;
-  --qs-tertiary-foreground: #6e6e82;
-  --qs-placeholder-foreground: #6e6e82;
-  --qs-divider: rgba(255, 255, 255, .12);
-  --qs-default-border: rgba(255, 255, 255, .12);
-  --qs-neutral-soft: #3a3a4e;
-  --qs-neutral-gray-50: #1e1e2a;
-  --qs-tertiary-background: #1e1e2a;
-  --qs-action-hover: rgba(255, 255, 255, .05);
-  --qs-primary-default: #8575ff;
-  --qs-primary-dark: #4200db;
-  --qs-primary-light: color-mix(in srgb, #8575ff 15%, transparent);
-  --qs-success-default: #4ade80;
-  --qs-error-default: #ff6b6b;
-  --qs-font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --react-pdf-text-layer: 1;
-  --highlight-bg-color: rgba(180, 0, 170, 1);
-  --highlight-selected-bg-color: rgba(0, 100, 0, 1);
-  --react-pdf-annotation-layer: 1;
-  --annotation-unfocused-field-background: url("data:image/svg+xml;charset=UTF-8,<svg width='1px' height='1px' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill:rgba(0, 54, 255, 0.13);'/></svg>");
-  --input-focus-border-color: Highlight;
-  --input-focus-outline: 1px solid Canvas;
-  --input-unfocused-border-color: transparent;
-  --input-disabled-border-color: transparent;
-  --input-hover-border-color: black;
-  --link-outline: none;
-}
-body { background: var(--color-bg); }</style>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flyer Design Services</title>
@@ -230,22 +14,73 @@ body { background: var(--color-bg); }</style>
             min-height: 100vh;
         }
 
-        /* Page Navigation */
         .page { display: none; }
         .page.active { display: block; }
 
-        /* ===== PRICING PAGE ===== */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(15, 26, 20, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #1f3329;
+            padding: 14px 30px;
+        }
+
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand { display: flex; align-items: center; gap: 12px; }
+
+        .nav-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links { display: flex; align-items: center; gap: 8px; }
+
+        .nav-link {
+            padding: 10px 18px;
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: color 0.2s, background 0.2s;
+        }
+
+        .nav-link:hover { color: #ffffff; background: rgba(127, 173, 142, 0.1); }
+        .nav-link.active { color: #7fad8e; background: rgba(127, 173, 142, 0.1); }
+
+        .nav-cta {
+            padding: 10px 20px;
+            background: #7fad8e;
+            color: #0f1a14;
+            font-size: 13px;
+            font-weight: 700;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s;
+            margin-left: 8px;
+        }
+
+        .nav-cta:hover { background: #9ac4a8; }
+
         .header {
             text-align: center;
             padding: 60px 20px 40px;
         }
 
-        .header h1 {
-            font-size: 42px;
-            font-weight: 800;
-            margin-bottom: 12px;
-        }
-
+        .header h1 { font-size: 42px; font-weight: 800; margin-bottom: 12px; }
         .header h1 span { color: #7fad8e; }
 
         .header p {
@@ -273,10 +108,7 @@ body { background: var(--color-bg); }</style>
             transition: transform 0.2s, border-color 0.2s;
         }
 
-        .tier:hover {
-            transform: translateY(-4px);
-            border-color: #7fad8e;
-        }
+        .tier:hover { transform: translateY(-4px); border-color: #7fad8e; }
 
         .tier.popular {
             border-color: #7fad8e;
@@ -298,411 +130,138 @@ body { background: var(--color-bg); }</style>
             letter-spacing: 0.5px;
         }
 
-        .tier-name {
-            font-size: 14px;
-            font-weight: 600;
-            color: #7fad8e;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-        }
+        .tier-name { font-size: 14px; font-weight: 600; color: #7fad8e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .tier-price { font-size: 48px; font-weight: 800; margin-bottom: 4px; }
+        .tier-price span { font-size: 18px; color: rgba(255,255,255,0.4); font-weight: 400; }
+        .tier-desc { font-size: 14px; color: rgba(255,255,255,0.4); margin-bottom: 28px; line-height: 1.4; }
 
-        .tier-price {
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 4px;
-        }
+        .features { list-style: none; margin-bottom: 32px; }
+        .features li { font-size: 14px; color: rgba(255,255,255,0.7); padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; gap: 10px; }
+        .features li::before { content: "\2713"; color: #7fad8e; font-weight: 700; font-size: 13px; }
 
-        .tier-price span {
-            font-size: 18px;
-            color: rgba(255,255,255,0.4);
-            font-weight: 400;
-        }
+        .cta-btn { display: block; width: 100%; padding: 14px; background: transparent; border: 2px solid #7fad8e; color: #7fad8e; font-size: 14px; font-weight: 700; border-radius: 8px; cursor: pointer; transition: background 0.2s, color 0.2s; text-align: center; text-decoration: none; }
+        .cta-btn:hover { background: #7fad8e; color: #0f1a14; }
+        .tier.popular .cta-btn { background: #7fad8e; color: #0f1a14; }
+        .tier.popular .cta-btn:hover { background: #9ac4a8; }
 
-        .tier-desc {
-            font-size: 14px;
-            color: rgba(255,255,255,0.4);
-            margin-bottom: 28px;
-            line-height: 1.4;
-        }
-
-        .features {
-            list-style: none;
-            margin-bottom: 32px;
-        }
-
-        .features li {
-            font-size: 14px;
-            color: rgba(255,255,255,0.7);
-            padding: 8px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .features li::before {
-            content: "\2713";
-            color: #7fad8e;
-            font-weight: 700;
-            font-size: 13px;
-        }
-
-        .cta-btn {
-            display: block;
-            width: 100%;
-            padding: 14px;
-            background: transparent;
-            border: 2px solid #7fad8e;
-            color: #7fad8e;
-            font-size: 14px;
-            font-weight: 700;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.2s, color 0.2s;
-            text-align: center;
-            text-decoration: none;
-        }
-
-        .cta-btn:hover {
-            background: #7fad8e;
-            color: #0f1a14;
-        }
-
-        .tier.popular .cta-btn {
-            background: #7fad8e;
-            color: #0f1a14;
-        }
-
-        .tier.popular .cta-btn:hover {
-            background: #9ac4a8;
-        }
-
-        
-        /* Nav */
-        .nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(15, 26, 20, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #1f3329;
-            padding: 14px 30px;
-        }
-
-        .nav-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .nav-brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .nav-logo {
-            width: 42px;
-            height: 42px;
-            border-radius: 8px;
-            object-fit: cover;
-        }
-
-        .nav-name {
-            font-size: 18px;
-            font-weight: 700;
-            color: #ffffff;
-            letter-spacing: 0.5px;
-        }
-
-        .nav-cta {
-            padding: 10px 20px;
-            background: #7fad8e;
-            color: #0f1a14;
-            font-size: 13px;
-            font-weight: 700;
-            border-radius: 6px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: background 0.2s;
-        }
-
-        .nav-cta:hover {
-            background: #9ac4a8;
-        }
-
-/* Comparison Table */
-        .comparison {
-            max-width: 1100px;
-            margin: 50px auto;
-            padding: 0 30px;
-        }
-
-        .comparison h2 {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 24px;
-            text-align: center;
-        }
-
-        .table-wrap {
-            overflow-x: auto;
-            border-radius: 12px;
-            border: 1px solid #1f3329;
-        }
-
-        .comparison table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 14px;
-        }
-
-        .comparison thead tr {
-            background: #142019;
-        }
-
-        .comparison th {
-            padding: 18px 16px;
-            font-weight: 700;
-            font-size: 15px;
-            text-align: center;
-            border-bottom: 1px solid #1f3329;
-        }
-
-        .comparison th span {
-            display: block;
-            color: #7fad8e;
-            font-size: 13px;
-            margin-top: 4px;
-        }
-
-        .comparison th.feature-col {
-            text-align: left;
-            color: rgba(255,255,255,0.5);
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .comparison th.hl {
-            background: rgba(127, 173, 142, 0.08);
-            border-left: 1px solid rgba(127, 173, 142, 0.15);
-            border-right: 1px solid rgba(127, 173, 142, 0.15);
-        }
-
-        .comparison td {
-            padding: 14px 16px;
-            text-align: center;
-            border-bottom: 1px solid rgba(255,255,255,0.03);
-            color: rgba(255,255,255,0.7);
-        }
-
-        .comparison td:first-child {
-            text-align: left;
-            color: rgba(255,255,255,0.5);
-            font-weight: 500;
-        }
-
-        .comparison td.hl {
-            background: rgba(127, 173, 142, 0.04);
-            border-left: 1px solid rgba(127, 173, 142, 0.08);
-            border-right: 1px solid rgba(127, 173, 142, 0.08);
-        }
-
+        .comparison { max-width: 1100px; margin: 50px auto; padding: 0 30px; }
+        .comparison h2 { font-size: 24px; font-weight: 700; margin-bottom: 24px; text-align: center; }
+        .table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid #1f3329; }
+        .comparison table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        .comparison thead tr { background: #142019; }
+        .comparison th { padding: 18px 16px; font-weight: 700; font-size: 15px; text-align: center; border-bottom: 1px solid #1f3329; }
+        .comparison th span { display: block; color: #7fad8e; font-size: 13px; margin-top: 4px; }
+        .comparison th.feature-col { text-align: left; color: rgba(255,255,255,0.5); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .comparison th.hl { background: rgba(127, 173, 142, 0.08); border-left: 1px solid rgba(127, 173, 142, 0.15); border-right: 1px solid rgba(127, 173, 142, 0.15); }
+        .comparison td { padding: 14px 16px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.03); color: rgba(255,255,255,0.7); }
+        .comparison td:first-child { text-align: left; color: rgba(255,255,255,0.5); font-weight: 500; }
+        .comparison td.hl { background: rgba(127, 173, 142, 0.04); border-left: 1px solid rgba(127, 173, 142, 0.08); border-right: 1px solid rgba(127, 173, 142, 0.08); }
         .comparison td.yes { color: #7fad8e; font-weight: 700; }
         .comparison td.no { color: rgba(255,255,255,0.15); }
-
         .comparison tbody tr:hover { background: rgba(255,255,255,0.02); }
 
-        /* Add-ons */
-        .addons {
-            max-width: 1100px;
-            margin: 50px auto;
-            padding: 0 30px;
-        }
-
-        .addons h2 {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .addons-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
-        }
-
-        .addon-card {
-            background: #142019;
-            border: 1px solid #1f3329;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            transition: border-color 0.2s;
-        }
-
+        .addons { max-width: 1100px; margin: 50px auto; padding: 0 30px; }
+        .addons h2 { font-size: 24px; font-weight: 700; margin-bottom: 20px; text-align: center; }
+        .addons-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+        .addon-card { background: #142019; border: 1px solid #1f3329; border-radius: 12px; padding: 20px; text-align: center; transition: border-color 0.2s; }
         .addon-card:hover { border-color: #7fad8e; }
+        .addon-card .addon-price { font-size: 22px; font-weight: 700; color: #d4a574; margin-bottom: 6px; }
+        .addon-card .addon-name { font-size: 13px; color: rgba(255,255,255,0.6); }
 
-        .addon-card .addon-price {
-            font-size: 22px;
-            font-weight: 700;
-            color: #d4a574;
-            margin-bottom: 6px;
-        }
-
-        .addon-card .addon-name {
-            font-size: 13px;
-            color: rgba(255,255,255,0.6);
-        }
-
-        .footer {
-            text-align: center;
-            padding: 50px 20px;
-            color: rgba(255,255,255,0.3);
-            font-size: 14px;
-        }
-
+        .footer { text-align: center; padding: 50px 20px; color: rgba(255,255,255,0.3); font-size: 14px; }
         .footer a { color: #d4a574; text-decoration: none; }
         .footer a:hover { color: #e8bfa0; }
 
-        /* ===== ORDER FORM PAGE ===== */
-        .form-container {
-            max-width: 600px;
+        /* ===== PORTFOLIO PAGE ===== */
+        .portfolio-header { text-align: center; padding: 60px 20px 20px; }
+        .portfolio-header h1 { font-size: 42px; font-weight: 800; margin-bottom: 12px; }
+        .portfolio-header h1 span { color: #7fad8e; }
+        .portfolio-header p { font-size: 18px; color: rgba(255,255,255,0.5); max-width: 500px; margin: 0 auto; }
+
+        .portfolio-filters { display: flex; justify-content: center; gap: 10px; padding: 20px; flex-wrap: wrap; }
+        .filter-btn { padding: 8px 18px; background: #142019; border: 1px solid #1f3329; color: rgba(255,255,255,0.6); font-size: 13px; font-weight: 600; border-radius: 20px; cursor: pointer; transition: all 0.2s; }
+        .filter-btn:hover, .filter-btn.active { border-color: #7fad8e; color: #7fad8e; background: rgba(127, 173, 142, 0.1); }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 20px 30px 60px;
         }
 
-        .back-link {
-            color: #7fad8e;
-            text-decoration: none;
-            font-size: 14px;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            margin-bottom: 30px;
-            cursor: pointer;
-        }
-
-        .back-link:hover { color: #9ac4a8; }
-
-        .form-container h1 {
-            font-size: 32px;
-            font-weight: 800;
-            margin-bottom: 8px;
-        }
-
-        .form-container h1 span { color: #7fad8e; }
-
-        .selected-tier {
-            display: inline-block;
-            background: rgba(127, 173, 142, 0.1);
-            border: 1px solid #7fad8e;
-            color: #7fad8e;
-            font-size: 13px;
-            font-weight: 600;
-            padding: 4px 12px;
-            border-radius: 20px;
-            margin-bottom: 24px;
-        }
-
-        .subtitle {
-            color: rgba(255,255,255,0.5);
-            font-size: 16px;
-            margin-bottom: 40px;
-        }
-
-        .form-group { margin-bottom: 24px; }
-
-        .form-group label {
-            display: block;
-            font-size: 13px;
-            font-weight: 600;
-            color: rgba(255,255,255,0.6);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 8px;
-        }
-
-        input, textarea, select {
-            width: 100%;
-            padding: 14px 16px;
+        .portfolio-item {
             background: #142019;
             border: 1px solid #1f3329;
-            border-radius: 8px;
-            color: #ffffff;
-            font-size: 15px;
-            font-family: inherit;
-            transition: border-color 0.2s;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.2s, border-color 0.2s;
         }
 
-        input:focus, textarea:focus, select:focus {
-            outline: none;
-            border-color: #7fad8e;
+        .portfolio-item:hover { transform: translateY(-4px); border-color: #7fad8e; }
+
+        .portfolio-thumb {
+            width: 100%;
+            height: 220px;
+            background: #1a2e22;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
 
+        .portfolio-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+        .portfolio-info { padding: 20px; }
+        .portfolio-info h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; color: #ffffff; }
+        .portfolio-info p { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.5; margin-bottom: 12px; }
+
+        .portfolio-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+        .portfolio-tag { font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 12px; background: rgba(127, 173, 142, 0.1); color: #7fad8e; border: 1px solid rgba(127, 173, 142, 0.2); }
+        .portfolio-tag.event { background: rgba(212, 165, 116, 0.1); color: #d4a574; border-color: rgba(212, 165, 116, 0.2); }
+        .portfolio-tag.business { background: rgba(96, 165, 250, 0.1); color: #60a5fa; border-color: rgba(96, 165, 250, 0.2); }
+        .portfolio-tag.music { background: rgba(192, 132, 252, 0.1); color: #c084fc; border-color: rgba(192, 132, 252, 0.2); }
+
+        .portfolio-loading { text-align: center; padding: 60px 20px; color: rgba(255,255,255,0.4); font-size: 15px; grid-column: 1 / -1; }
+        .portfolio-empty { text-align: center; padding: 60px 20px; color: rgba(255,255,255,0.3); font-size: 15px; grid-column: 1 / -1; }
+
+        /* ===== ORDER FORM PAGE ===== */
+        .form-container { max-width: 600px; margin: 0 auto; padding: 40px 20px; }
+        .back-link { color: #7fad8e; text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 30px; cursor: pointer; }
+        .back-link:hover { color: #9ac4a8; }
+        .form-container h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; }
+        .form-container h1 span { color: #7fad8e; }
+
+        .selected-tier { display: inline-block; background: rgba(127, 173, 142, 0.1); border: 1px solid #7fad8e; color: #7fad8e; font-size: 13px; font-weight: 600; padding: 4px 12px; border-radius: 20px; margin-bottom: 24px; }
+        .subtitle { color: rgba(255,255,255,0.5); font-size: 16px; margin-bottom: 40px; }
+
+        .form-group { margin-bottom: 24px; }
+        .form-group label { display: block; font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+
+        input, textarea, select { width: 100%; padding: 14px 16px; background: #142019; border: 1px solid #1f3329; border-radius: 8px; color: #ffffff; font-size: 15px; font-family: inherit; transition: border-color 0.2s; }
+        input:focus, textarea:focus, select:focus { outline: none; border-color: #7fad8e; }
         select { appearance: none; cursor: pointer; }
         textarea { min-height: 120px; resize: vertical; }
 
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-
-        .checkbox-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 4px;
-        }
-
-        .checkbox-group label {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 14px;
-            text-transform: none;
-            letter-spacing: 0;
-            color: rgba(255,255,255,0.6);
-            cursor: pointer;
-        }
-
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .checkbox-group { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
+        .checkbox-group label { display: flex; align-items: center; gap: 6px; font-size: 14px; text-transform: none; letter-spacing: 0; color: rgba(255,255,255,0.6); cursor: pointer; }
         .checkbox-group input { width: auto; }
 
-        .submit-btn {
-            display: block;
-            width: 100%;
-            padding: 16px;
-            background: #7fad8e;
-            border: none;
-            color: #0f1a14;
-            font-size: 16px;
-            font-weight: 700;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.2s;
-            margin-top: 12px;
-        }
-
+        .submit-btn { display: block; width: 100%; padding: 16px; background: #7fad8e; border: none; color: #0f1a14; font-size: 16px; font-weight: 700; border-radius: 8px; cursor: pointer; transition: background 0.2s; margin-top: 12px; }
         .submit-btn:hover { background: #9ac4a8; }
 
-        .note {
-            text-align: center;
-            margin-top: 16px;
-            font-size: 13px;
-            color: rgba(255,255,255,0.3);
-        }
+        .note { text-align: center; margin-top: 16px; font-size: 13px; color: rgba(255,255,255,0.3); }
 
         @media (max-width: 768px) {
             .pricing-grid { grid-template-columns: 1fr; }
+            .portfolio-grid { grid-template-columns: 1fr; }
             .addons-grid { grid-template-columns: repeat(2, 1fr); }
-            .header h1 { font-size: 32px; }
+            .header h1, .portfolio-header h1 { font-size: 32px; }
             .form-row { grid-template-columns: 1fr; }
+            .nav-links { gap: 4px; }
+            .nav-link { padding: 8px 12px; font-size: 13px; }
         }
     </style>
 </head>
@@ -710,14 +269,14 @@ body { background: var(--color-bg); }</style>
 
     <!-- ===== PRICING PAGE ===== -->
     <div class="page active" id="pricingPage">
-    <!-- Nav Bar -->
     <nav class="nav">
         <div class="nav-inner">
-            <div class="nav-brand">
-                
-                <span class="nav-name">Overgrowth Co.</span>
+            <div class="nav-brand"><span class="nav-name">Overgrowth Co.</span></div>
+            <div class="nav-links">
+                <a class="nav-link active" onclick="showPricing()">Pricing</a>
+                <a class="nav-link" onclick="showPortfolio()">Portfolio</a>
+                <a class="nav-cta" onclick="showOrder('standard')">Get a Quote</a>
             </div>
-            <a class="nav-cta" onclick="showOrder('standard')">Get a Quote</a>
         </div>
     </nav>
 
@@ -803,33 +362,50 @@ body { background: var(--color-bg); }</style>
         <div class="addons">
             <h2>Add-Ons</h2>
             <div class="addons-grid">
-                <div class="addon-card">
-                    <div class="addon-price">+$25</div>
-                    <div class="addon-name">Rush Delivery (24hr)</div>
-                </div>
-                <div class="addon-card">
-                    <div class="addon-price">+$15</div>
-                    <div class="addon-name">Additional Size/Format</div>
-                </div>
-                <div class="addon-card">
-                    <div class="addon-price">+$15</div>
-                    <div class="addon-name">Social Media Resize</div>
-                </div>
-                <div class="addon-card">
-                    <div class="addon-price">15% off</div>
-                    <div class="addon-name">Bulk Order (5+ flyers)</div>
-                </div>
+                <div class="addon-card"><div class="addon-price">+$25</div><div class="addon-name">Rush Delivery (24hr)</div></div>
+                <div class="addon-card"><div class="addon-price">+$15</div><div class="addon-name">Additional Size/Format</div></div>
+                <div class="addon-card"><div class="addon-price">+$15</div><div class="addon-name">Social Media Resize</div></div>
+                <div class="addon-card"><div class="addon-price">15% off</div><div class="addon-name">Bulk Order (5+ flyers)</div></div>
             </div>
         </div>
 
         <div class="footer">
-            <p>
-                Ready to start your project?
-                Contact me on
-                <a href="https://instagram.com/jude_henderson5" target="_blank">Instagram</a>
-                or email
-                <a href="mailto:jude.s.henderson5@gmail.com">jude.s.henderson5@gmail.com</a>
-            </p>
+            <p>Ready to start your project? Contact me on <a href="https://instagram.com/jude_henderson5" target="_blank">Instagram</a> or email <a href="mailto:jude.s.henderson5@gmail.com">jude.s.henderson5@gmail.com</a></p>
+        </div>
+    </div>
+
+    <!-- ===== PORTFOLIO PAGE ===== -->
+    <div class="page" id="portfolioPage">
+    <nav class="nav">
+        <div class="nav-inner">
+            <div class="nav-brand"><span class="nav-name">Overgrowth Co.</span></div>
+            <div class="nav-links">
+                <a class="nav-link" onclick="showPricing()">Pricing</a>
+                <a class="nav-link active" onclick="showPortfolio()">Portfolio</a>
+                <a class="nav-cta" onclick="showOrder('standard')">Get a Quote</a>
+            </div>
+        </div>
+    </nav>
+
+        <div class="portfolio-header">
+            <h1>My <span>Work</span></h1>
+            <p>A selection of flyers and designs I've created for clients. Your project could be next.</p>
+        </div>
+
+        <div class="portfolio-filters">
+            <span class="filter-btn active" onclick="filterPortfolio('all')">All</span>
+            <span class="filter-btn" onclick="filterPortfolio('event')">Events</span>
+            <span class="filter-btn" onclick="filterPortfolio('business')">Business</span>
+            <span class="filter-btn" onclick="filterPortfolio('music')">Music</span>
+            <span class="filter-btn" onclick="filterPortfolio('social')">Social Media</span>
+        </div>
+
+        <div class="portfolio-grid" id="portfolioGrid">
+            <div class="portfolio-loading">Loading portfolio...</div>
+        </div>
+
+        <div class="footer">
+            <p>Like what you see? Let's work together. <a href="https://instagram.com/jude_henderson5" target="_blank">Instagram</a> · <a href="mailto:jude.s.henderson5@gmail.com">jude.s.henderson5@gmail.com</a></p>
         </div>
     </div>
 
@@ -837,44 +413,26 @@ body { background: var(--color-bg); }</style>
     <div class="page" id="orderPage">
         <div class="form-container">
             <a class="back-link" onclick="showPricing()">← Back to Pricing</a>
-            
             <h1>Let's <span>Get Started</span></h1>
             <div class="selected-tier" id="tierBadge">STANDARD PACKAGE</div>
             <p class="subtitle">Fill out the details below and I'll get back to you within 24 hours.</p>
 
             <form action="https://formspree.io/f/xpqnegkz" method="POST" id="orderForm">
                 <div class="form-row">
-                    <div class="form-group">
-                        <label>Your Name</label>
-                        <input type="text" name="name" placeholder="First &amp; Last" required="">
-                    </div>
-                    <div class="form-group">
-                        <label>Email or Phone</label>
-                        <input type="text" name="contact" placeholder="How to reach you" required="">
-                    </div>
+                    <div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="First & Last" required></div>
+                    <div class="form-group"><label>Email or Phone</label><input type="text" name="contact" placeholder="How to reach you" required></div>
                 </div>
-
-                <div class="form-group">
-                    <label>Package</label>
+                <div class="form-group"><label>Package</label>
                     <select id="packageSelect" name="package">
                         <option value="basic">Basic - $30</option>
                         <option value="standard">Standard - $60</option>
                         <option value="premium">Premium - $120</option>
                     </select>
                 </div>
-
-                <div class="form-group">
-                    <label>What's the flyer for?</label>
-                    <input type="text" name="purpose" placeholder="Event, business promo, menu, etc." required="">
-                </div>
-
+                <div class="form-group"><label>What's the flyer for?</label><input type="text" name="purpose" placeholder="Event, business promo, menu, etc." required></div>
                 <div class="form-row">
-                    <div class="form-group">
-                        <label>Deadline</label>
-                        <input type="text" name="deadline" placeholder="When do you need it?">
-                    </div>
-                    <div class="form-group">
-                        <label>Size</label>
+                    <div class="form-group"><label>Deadline</label><input type="text" name="deadline" placeholder="When do you need it?"></div>
+                    <div class="form-group"><label>Size</label>
                         <select name="size">
                             <option>Standard (8.5 x 11)</option>
                             <option>Half page (5.5 x 8.5)</option>
@@ -883,61 +441,136 @@ body { background: var(--color-bg); }</style>
                         </select>
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <label>Details / Vision</label>
-                    <textarea name="details" placeholder="Colors, style, text you want on it, any inspo images - whatever helps me get it right."></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>Add-Ons (optional)</label>
+                <div class="form-group"><label>Details / Vision</label><textarea name="details" placeholder="Colors, style, text you want on it, any inspo images - whatever helps me get it right."></textarea></div>
+                <div class="form-group"><label>Add-Ons (optional)</label>
                     <div class="checkbox-group">
                         <label><input type="checkbox" name="addon_rush" value="Rush Delivery +$25"> Rush Delivery (+$25)</label>
                         <label><input type="checkbox" name="addon_social" value="Social Media Resize +$15"> Social Media Resize (+$15)</label>
                         <label><input type="checkbox" name="addon_format" value="Extra Format +$15"> Extra Format (+$15)</label>
                     </div>
                 </div>
-
                 <button type="submit" class="submit-btn">Submit Request</button>
-
-                <p class="note" style="margin-top:20px;">
-    Payment is not required at submission. If your project is approved, you'll receive a confirmation email with next steps.
-    Once confirmed, payment can be sent via Venmo <strong>@Judeh05</strong>.
-</p>
+                <p class="note" style="margin-top:20px;">Payment is not required at submission. If your project is approved, you'll receive a confirmation email with next steps. Once confirmed, payment can be sent via Venmo <strong>@Judeh05</strong>.</p>
                 <p class="note">I'll respond within 24 hours with a confirmation and next steps.</p>
             </form>
         </div>
     </div>
 
     <script>
+        // ============================================
+        // SUPABASE CONFIG
+        // ============================================
+        const SUPABASE_URL = 'https://moxgbzpocxkkxagcouq.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1veGdienBvY3hra2t4YWdjb3VxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAzNTc2NDgsImV4cCI6MjA5NTkzMzY0OH0.fUgpEHhKwu7rqwi0v68r4pJOViWNWjNZR4_eC0iS79A';
+
+        // Portfolio data cache
+        let portfolioItems = [];
+        let currentFilter = 'all';
+
+        // Fetch portfolio items from Supabase
+        async function fetchPortfolio() {
+            try {
+                const response = await fetch(
+                    `${SUPABASE_URL}/rest/v1/portfolio?select=*&order=display_order.asc`,
+                    {
+                        headers: {
+                            'apikey': SUPABASE_ANON_KEY,
+                            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+                        }
+                    }
+                );
+                
+                if (!response.ok) throw new Error('Failed to fetch');
+                
+                portfolioItems = await response.json();
+                renderPortfolio();
+            } catch (error) {
+                document.getElementById('portfolioGrid').innerHTML = 
+                    '<div class="portfolio-empty">Unable to load portfolio. Please try again later.</div>';
+            }
+        }
+
+        // Render portfolio cards
+        function renderPortfolio() {
+            const grid = document.getElementById('portfolioGrid');
+            
+            const filtered = currentFilter === 'all' 
+                ? portfolioItems 
+                : portfolioItems.filter(item => item.category === currentFilter);
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '<div class="portfolio-empty">No items to display yet.</div>';
+                return;
+            }
+
+            grid.innerHTML = filtered.map(item => {
+                const tags = item.tags ? item.tags.map(tag => {
+                    let tagClass = 'portfolio-tag';
+                    if (['event', 'business', 'music'].includes(tag.toLowerCase())) {
+                        tagClass += ` ${tag.toLowerCase()}`;
+                    }
+                    return `<span class="${tagClass}">${tag}</span>`;
+                }).join('') : '';
+
+                const imageHtml = item.image_url 
+                    ? `<img src="${item.image_url}" alt="${item.title}">`
+                    : `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(127,173,142,0.4)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>`;
+
+                return `
+                    <div class="portfolio-item">
+                        <div class="portfolio-thumb">${imageHtml}</div>
+                        <div class="portfolio-info">
+                            <h3>${item.title}</h3>
+                            <p>${item.description || ''}</p>
+                            <div class="portfolio-tags">${tags}</div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Filter portfolio
+        function filterPortfolio(category) {
+            currentFilter = category;
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.textContent.toLowerCase().includes(category) || (category === 'all' && btn.textContent === 'All'));
+            });
+            renderPortfolio();
+        }
+
+        // Page navigation
         function showOrder(tier) {
             document.getElementById('pricingPage').classList.remove('active');
+            document.getElementById('portfolioPage').classList.remove('active');
             document.getElementById('orderPage').classList.add('active');
             
             const badge = document.getElementById('tierBadge');
             const select = document.getElementById('packageSelect');
             
-            if (tier === 'basic') {
-                badge.textContent = 'BASIC PACKAGE';
-                select.value = 'basic';
-            } else if (tier === 'premium') {
-                badge.textContent = 'PREMIUM PACKAGE';
-                select.value = 'premium';
-            } else {
-                badge.textContent = 'STANDARD PACKAGE';
-                select.value = 'standard';
-            }
+            if (tier === 'basic') { badge.textContent = 'BASIC PACKAGE'; select.value = 'basic'; }
+            else if (tier === 'premium') { badge.textContent = 'PREMIUM PACKAGE'; select.value = 'premium'; }
+            else { badge.textContent = 'STANDARD PACKAGE'; select.value = 'standard'; }
             
             window.scrollTo(0, 0);
         }
 
         function showPricing() {
             document.getElementById('orderPage').classList.remove('active');
+            document.getElementById('portfolioPage').classList.remove('active');
             document.getElementById('pricingPage').classList.add('active');
             window.scrollTo(0, 0);
         }
 
-        // Form submits directly to Formspree - they handle the email
+        function showPortfolio() {
+            document.getElementById('pricingPage').classList.remove('active');
+            document.getElementById('orderPage').classList.remove('active');
+            document.getElementById('portfolioPage').classList.add('active');
+            window.scrollTo(0, 0);
+            if (portfolioItems.length === 0) fetchPortfolio();
+        }
+
+        // Initial load
+        fetchPortfolio();
     </script>
 
 </body></html>

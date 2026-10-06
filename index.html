@@ -652,64 +652,62 @@
 
         // Fetch portfolio items from Supabase
         async function fetchPortfolio() {
+            const grid = document.getElementById('portfolioGrid');
+            grid.innerHTML = '<div class="portfolio-loading">Loading portfolio...</div>';
+
             try {
-                const response = await fetch(
-                    `${SUPABASE_URL}/rest/v1/portfolio?select=*&order=display_order.asc`,
-                    {
-                        headers: {
-                            'apikey': SUPABASE_ANON_KEY,
-                            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
-                        }
-                    }
-                );
-                
-                if (!response.ok) throw new Error('Failed to fetch');
-                
-                portfolioItems = await response.json();
+                // Do not order in PostgREST. If display_order is missing from the table,
+                // an ORDER BY would make the entire request fail. We sort safely in JS instead.
+                const endpoint = `${SUPABASE_URL}/rest/v1/portfolio?select=*`;
+                const response = await fetch(endpoint, {
+                    method: 'GET',
+                    headers: {
+                        'apikey': SUPABASE_ANON_KEY,
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                        'Accept': 'application/json'
+                    },
+                    cache: 'no-store'
+                });
+
+                const responseText = await response.text();
+                let data = null;
+                try { data = responseText ? JSON.parse(responseText) : null; }
+                catch (_) { data = null; }
+
+                if (!response.ok) {
+                    const message = data?.message || data?.hint || data?.details || responseText || 'Unknown Supabase error';
+                    throw new Error(`Supabase ${response.status} ${response.statusText}: ${message}`);
+                }
+
+                if (!Array.isArray(data)) {
+                    throw new Error('Supabase returned an unexpected response. Expected an array from the portfolio table.');
+                }
+
+                portfolioItems = data.sort((a, b) => {
+                    const aOrder = Number.isFinite(Number(a.display_order)) ? Number(a.display_order) : Number.MAX_SAFE_INTEGER;
+                    const bOrder = Number.isFinite(Number(b.display_order)) ? Number(b.display_order) : Number.MAX_SAFE_INTEGER;
+                    return aOrder - bOrder;
+                });
+
                 renderPortfolio();
             } catch (error) {
-                document.getElementById('portfolioGrid').innerHTML = 
-                    '<div class="portfolio-empty">Unable to load portfolio. Please try again later.</div>';
+                console.error('[Overgrowth Co.] Portfolio load failed:', error);
+                grid.innerHTML = `
+                    <div class="portfolio-empty">
+                        <strong>Unable to load portfolio.</strong><br>
+                        <span style="display:block;margin-top:8px;">${escapeHtml(error.message || 'Unknown error')}</span>
+                        <button onclick="fetchPortfolio()" style="margin-top:18px;padding:9px 16px;background:#7fad8e;border:0;border-radius:6px;color:#0f1a14;font-weight:700;cursor:pointer;">Try Again</button>
+                    </div>`;
             }
         }
 
-        // Render portfolio cards
-        function renderPortfolio() {
-            const grid = document.getElementById('portfolioGrid');
-            
-            filteredItems = currentFilter === 'all' 
-                ? portfolioItems 
-                : portfolioItems.filter(item => item.category === currentFilter);
-
-            if (filteredItems.length === 0) {
-                grid.innerHTML = '<div class="portfolio-empty">No items to display yet.</div>';
-                return;
-            }
-
-            grid.innerHTML = filteredItems.map((item, index) => {
-                const tags = item.tags ? item.tags.map(tag => {
-                    let tagClass = 'portfolio-tag';
-                    if (['event', 'business', 'music'].includes(tag.toLowerCase())) {
-                        tagClass += ` ${tag.toLowerCase()}`;
-                    }
-                    return `<span class="${tagClass}">${tag}</span>`;
-                }).join('') : '';
-
-                const imageHtml = item.image_url 
-                    ? `<img src="${item.image_url}" alt="${item.title}">`
-                    : `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(127,173,142,0.4)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>`;
-
-                return `
-                    <div class="portfolio-item" onclick="openLightbox(${index})">
-                        <div class="portfolio-thumb">${imageHtml}</div>
-                        <div class="portfolio-info">
-                            <h3>${item.title}</h3>
-                            <p>${item.description || ''}</p>
-                            <div class="portfolio-tags">${tags}</div>
-                        </div>
-                    </div>
-                `;
-            }).join('');
+        function escapeHtml(value) {
+            return String(value)
+                .replaceAll('&', '&amp;')
+                .replaceAll('<', '&lt;')
+                .replaceAll('>', '&gt;')
+                .replaceAll('"', '&quot;')
+                .replaceAll("'", '&#039;');
         }
 
         // Lightbox functions
